@@ -1,5 +1,5 @@
 import React from "react";
-import Day from "../day/Day";
+import Day from "../day/Day.jsx";
 
 import "./week.scss";
 
@@ -11,7 +11,7 @@ const Week = ({ weekDates, events }) => {
           dayStart.getHours() + 24
         );
 
-        //getting all events from the day we will render
+        // getting all events from the day we will render
         const dayEvents = events.filter(
           (event) => event.dateFrom > dayStart && event.dateTo < dayEnd
         );
