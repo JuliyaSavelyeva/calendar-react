@@ -1,18 +1,19 @@
 import React from 'react';
+import Time from '../time/Time.jsx';
 
 import Event from '../event/Event.jsx';
 import { formatMins } from '../../utils/dateUtils.js';
 
-const Hour = ({ dataHour, hourEvents }) => {
+const Hour = ({ dataHour, hourEvents, removeEvent, currentTimeSlot }) => {
   console.log(5);
+
   return (
     <div className="calendar__time-slot" data-time={dataHour + 1}>
+      {currentTimeSlot && <Time />}
       {/* if no events in the current hour nothing will render here */}
       {hourEvents.map(({ id, dateFrom, dateTo, title }) => {
         const eventStart = `${dateFrom.getHours()}:${formatMins(dateFrom.getMinutes())}`;
         const eventEnd = `${dateTo.getHours()}:${formatMins(dateTo.getMinutes())}`;
-
-        console.log((dateTo.getTime() - dateFrom.getTime()) / (1000 * 60));
 
         return (
           <Event
@@ -22,6 +23,8 @@ const Hour = ({ dataHour, hourEvents }) => {
             marginTop={dateFrom.getMinutes()}
             time={`${eventStart} - ${eventEnd}`}
             title={title}
+            id={id}
+            removeEvent={removeEvent}
           />
         );
       })}

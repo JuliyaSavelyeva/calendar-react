@@ -1,21 +1,29 @@
-import React from "react";
+import React from 'react';
+import classNames from 'classnames';
+import moment from 'moment';
 
-import { days } from "../../utils/dateUtils.js";
+import { days } from '../../utils/dateUtils.js';
 
-const Navigation = ({ weekDates }) => {
-  console.log(5);
-  return (
-    <header className="calendar__header">
-      {weekDates.map((dayDate) => {
-        return (
-          <div key={dayDate.getDate()} className="calendar__day-label day-label">
-            <span className="day-label__day-name">{days[dayDate.getDay()]}</span>
-            <span className="day-label__day-number">{dayDate.getDate()}</span>
-          </div>
-        )
-      })}
-    </header>
-  );
-};
+const Navigation = ({ weekDates }) => (
+  <header className="calendar__header">
+    {weekDates.map(dayDate => {
+      const isEqualDate = moment(new Date()).format('L') === moment(dayDate).format('L');
+
+      const dayNameClasses = classNames('day-label__day-name', {
+        'current-name': isEqualDate,
+      });
+      const dayNumberClasses = classNames('day-label__day-number', {
+        'current-number': isEqualDate,
+      });
+
+      return (
+        <div key={dayDate.getDate()} className="calendar__day-label day-label">
+          <span className={dayNameClasses}>{days[dayDate.getDay()]}</span>
+          <span className={dayNumberClasses}>{dayDate.getDate()}</span>
+        </div>
+      );
+    })}
+  </header>
+);
 
 export default Navigation;

@@ -1,0 +1,30 @@
+.red-block {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    border-top: 2px solid red;
+    z-index: 5;
+  }
+
+  &__circle {
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    z-index: 5;
+  }
+}
+
+// .red-line {
+// }
+
+// .red-circle {
+// }
