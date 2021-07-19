@@ -27,7 +27,6 @@ const Modal = ({ isOpenModal, onCloseModal, saveEvent }) => {
     e.preventDefault();
 
     const currentEvent = {
-      id: Math.random(),
       title,
       description,
       dateFrom: getDateTime(date, startTime),
@@ -36,6 +35,14 @@ const Modal = ({ isOpenModal, onCloseModal, saveEvent }) => {
 
     saveEvent(currentEvent);
     onCloseModal();
+
+    setEvent({
+      title: '',
+      description: '',
+      date: '',
+      startTime: '',
+      endTime: '',
+    });
   };
 
   if (!isOpenModal) {
