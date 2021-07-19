@@ -1,7 +1,6 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { months } from '../../utils/dateUtils.js';
-
 import './header.scss';
 
 const Header = ({ onOpenModal, weekDates, onRightWeek, onLeftWeek, onCurrentWeek }) => {
@@ -31,6 +30,14 @@ const Header = ({ onOpenModal, weekDates, onRightWeek, onLeftWeek, onCurrentWeek
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  onOpenModal: PropTypes.func.isRequired,
+  onRightWeek: PropTypes.func.isRequired,
+  onLeftWeek: PropTypes.func.isRequired,
+  onCurrentWeek: PropTypes.func.isRequired,
+  weekDates: PropTypes.array.isRequired,
 };
 
 export default Header;

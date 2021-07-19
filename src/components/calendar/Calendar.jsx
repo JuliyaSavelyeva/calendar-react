@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Navigation from '../navigation/Navigation.jsx';
 import Week from '../week/Week.jsx';
@@ -51,6 +52,12 @@ const Calendar = ({ weekDates, isOpenModal, onCloseModal }) => {
       <Modal isOpenModal={isOpenModal} onCloseModal={onCloseModal} saveEvent={saveEvent} />
     </section>
   );
+};
+
+Calendar.propTypes = {
+  isOpenModal: PropTypes.bool.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
+  weekDates: PropTypes.array.isRequired,
 };
 
 export default Calendar;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Time from '../time/Time.jsx';
 
 import Event from '../event/Event.jsx';
@@ -27,5 +28,12 @@ const Hour = ({ dataHour, hourEvents, removeEvent, currentTimeSlot }) => (
     })}
   </div>
 );
+
+Hour.propTypes = {
+  dataHour: PropTypes.number.isRequired,
+  hourEvents: PropTypes.array.isRequired,
+  removeEvent: PropTypes.func.isRequired,
+  currentTimeSlot: PropTypes.bool.isRequired,
+};
 
 export default Hour;

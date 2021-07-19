@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const EventDelete = ({ isShowDelete, deleteEvent }) =>
   isShowDelete && (
@@ -7,5 +8,10 @@ const EventDelete = ({ isShowDelete, deleteEvent }) =>
       Delete
     </button>
   );
+
+EventDelete.propTypes = {
+  isShowDelete: PropTypes.bool.isRequired,
+  deleteEvent: PropTypes.func.isRequired,
+};
 
 export default EventDelete;
