@@ -1,6 +1,6 @@
 # calendar-react
 
-### [Site link](https://github.com/JuliyaSavelyeva/calendar-react)
+### [Site link](https://app.netlify.com/sites/optimistic-kirch-995ed8/overview)
 
 ### The tech stack is:
 
