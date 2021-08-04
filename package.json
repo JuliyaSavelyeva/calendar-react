@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ext .jsx,.js src/",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "webpack -p",
