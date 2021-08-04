@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 # calendar-react
 
 ### [Netlify link](https://optimistic-kirch-995ed8.netlify.app/)
