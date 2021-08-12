@@ -6,7 +6,6 @@ import Week from '../week/Week.jsx';
 import Sidebar from '../sidebar/Sidebar.jsx';
 import Modal from '../modal/Modal.jsx';
 import { deleteFetchData, getFetchData, postFetchData } from '../../gateway/gateway.js';
-// import events from '../../gateway/events.js';
 
 import './calendar.scss';
 
